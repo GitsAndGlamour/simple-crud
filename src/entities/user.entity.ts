@@ -1,11 +1,11 @@
 import { v4 } from 'uuid';
-import { BaseEntity, Entity, PrimaryKey, Property } from '@mikro-orm/core'
+import { BaseEntity, Entity, PrimaryKey, Property } from '@mikro-orm/core';
 
 @Entity()
 export class User extends BaseEntity<any, any> {
 
   @PrimaryKey()
-  id = v4();
+  id: string = v4();
 
   @Property()
   first!: string;
@@ -23,4 +23,4 @@ export class User extends BaseEntity<any, any> {
   updatedAt: Date = new Date();
 }
 
-export type UserWrite = Omit<User, 'id' | 'createdAt' | 'updatedAt'>
+export type UserWrite = Omit<User, 'id' | 'createdAt' | 'updatedAt'>;

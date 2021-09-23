@@ -22,8 +22,8 @@ export class AppService {
   }
 
   async createUser(user: UserWrite): Promise<User> {
-    const created: User = await this.em.create(User, user);
-    await this.em.flush();
+    const created = await this.em.create(User, user);
+    await this.em.persistAndFlush(created);
     return created;
   }
 
