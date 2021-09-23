@@ -3,6 +3,8 @@
 ## Local Deployment Steps
 
 ```bash
+$ yarn install
+
 # Run docker-compose.yml
 $ yarn start:database
 
